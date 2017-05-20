@@ -2,7 +2,7 @@
 
 I already had an apache server set up, but I wanted to use the one server for multiple sites. To do this, you can include a config file for each site in the enabled-site folder in `/etc/apache2/sites-enabled/`
 
-#### Instructions:
+#### One way to make it work
 
 1. Set up a new config file  
 a) cd /etc/apache2/sites-enabled  
@@ -12,7 +12,7 @@ c) need to sudo into atom to make the changes and save them
 2. Set up SymLinks  
 a) `cd /var/www`  
 b) `ls` to see what's in there already  
-c) `sudo ln -s /home/lucy/Documents/Outlandish/[project-folder] [alias-for-project]`  
+c) `sudo ln -s /PATH/../[project-folder] [alias-for-project]`  
 d) `ls -l` to see that it's there (in detail)  
 e) add the following to the file  
 
@@ -37,7 +37,7 @@ If it's fine, all good. Otherwise, go on:
 
 6. If need be, remove restrictions on folders  
 a) read errors: `cd /var/log/apache2`, then `tail error.log`  
-b) `cd /home/lucy/Documents/Outlandish/[project-folder]`  
+b) `cd /PATH/../[project-folder]`  
 c) Modify the permissions for var: `chmod a+w var`  
 d) `cd var`  
 e) Modify the permissions for logs and sessions:  
