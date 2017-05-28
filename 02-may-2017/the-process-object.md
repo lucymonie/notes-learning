@@ -19,9 +19,9 @@ The answer was actually available in the quoted paragraph, but I didn't make the
 
 I was tired, so I gave up for the night and shut down. In the morning, when I started (paid-for) work, I found that I was not able to connect with the aws-hosted elasticsearch database. I re-ran the setup command for elastic search and got the following error message: `Error: Unable to reach Elasticsearch Server! Check that service is running.`
 
-I wondered if there was a connection between the problem I had with my side-project and this issue as in both cases, the connections relied on environment variables stored in .env files. It was at this point that I became concerned that I had broken something significant.
-
 I asked the tech lead on my project if there was any reason I couldn't connect with elasticsearch, and he asked for my ip address. I didn't ask why, but I did some digging afterwards and I believe it's for [the reasons described in this blog post](https://www.elastic.co/blog/elasticsearch-unplugged). He plugged in my ipv6 and then ipv4. Still nothing.
+
+I wondered if there was a connection between the problem I had with my side-project and this issue as in both cases, the connections relied on environment variables stored in .env files. It was at this point that I became concerned that I had broken something significant.
 
 Next, I got in touch with another developer, who has often helped me out when I'm in a bind. Knowing there are people like that who are there for you makes a huge difference to your morale. I think it's worth noting the process that he took in helping me diagnose the problem.
 
