@@ -1,5 +1,5 @@
 ## Understanding minimax
-Ihave been working on an unbeatable tic tac toe game for node terminal, and I would ideally like to implement a minimax algorithm, which can be used to create an unbeatable AI player in games of this kind.
+I have been working on an unbeatable tic tac toe game for node terminal, and I would ideally like to implement a minimax algorithm, which can be used to create an unbeatable AI player in games of this kind.
 
 At the moment I'm using a breadth-first function that examines all possible next states of the game board. I use a heuristic function to prioritise a win or prevent a loss. If there is no win available or immediate loss to prevent, I use a 'naive' function with a series of if/else statements to choose the next move.
 
@@ -54,7 +54,9 @@ At the terminal state or leaf node, a heuristic function gives the outcome a sco
 From [Wikipedia](https://en.wikipedia.org/wiki/Minimax) again:
 >An alternative is using a rule that if the result of a move is an immediate win for A it is assigned positive infinity and, if it is an immediate win for B, negative infinity. The value to A of any other move is the minimum of the values resulting from each of B's possible replies. For this reason, A is called the maximizing player and B is called the minimizing player, hence the name minimax algorithm.
 
-An example of a minimax algorithm in Javascript by [Vivek Panyam](https://blog.vivekpanyam.com/how-to-build-an-ai-that-wins-the-basics-of-minimax-search/)
+I found this [MIT lecture](https://www.youtube.com/watch?v=STjW3eH0Cik) on the subject very interesting.
+
+I have looked over this example of a minimax algorithm, written in Javascript by [Vivek Panyam](https://blog.vivekpanyam.com/how-to-build-an-ai-that-wins-the-basics-of-minimax-search/), and I have a basic grasp of what's going on:
 ```
 function recurseMinimax(board, player) {
     numNodes++;
@@ -102,5 +104,3 @@ In the next step, 'value' is the zeroth element of the outcome of a (recursive) 
 At this point, the terminal value (an array with a score and the board as its two list items) is assigned to 'value' and then depending on whether it's player or !player and the score of 'value' in comparison with nextVal (initialised as null but assigned the score of 'value' if player is truthy and 'value' is more than 'nextVal', or if player is falsy and 'value' is less than nextVal).
 
 Then a new board is created and the current position is made available again. After every available move has been looped over and evaluated, the most optimal are returned in an array `[nextVal, nextBoard]`.
-
-I found this [MIT lecture](https://www.youtube.com/watch?v=STjW3eH0Cik) on the subject very interesting.
