@@ -6,8 +6,8 @@ At the moment I'm using a breadth-first function that examines all possible next
 The game board is stored as a single-dimensional array, with 'X' or 'O' for taken places, and 'e' where the space is empty, for example:
 ```
 let board = ['e','e','X',
-             'O', 'X','e',
-             'e', 'O','e']
+             'O','X','e',
+             'e','O','e']
 ```              
 
 The code for the naive function is pretty cumbersome. It looks like this:
@@ -49,7 +49,7 @@ The point of a minimax algorithm is to examine every possible move that each pla
 
 From what I understand, minimax algorithms go for depth-first rather than breadth-first, and use recursion to dig all the way down to the leaf nodes (where there are no more spaces available on the board and there may be a winner or a draw) or, alternatively, a terminal state (in which one player is the winner).
 
-At the terminal state or leaf node, a heuristic function gives the outcome a score (perhaps 1 for a win, 0 for a draw and -1 for a loss). All available scores that stem from each move are assessed, and the least optimal is passed back up to the root, on the assumption that the least is what your opponent will make available to you. Your best next move is the highest of these available moves. The further away the optimal outcome is, the lower its score should be, so that the AI player (for example) prioritises a win that is one move away rather than four moves away.
+At the terminal state or leaf node, a heuristic function gives the outcome a score (perhaps 1 for a win, 0 for a draw and -1 for a loss). All available scores that stem from each move are assessed, and the least optimal is passed back up to the root, on the assumption that the least is what your opponent will make available to you. Your best next move is the greatest of these available moves. The further away the optimal outcome is, the lower its score should be, so that the AI player prioritises a win that is one move away rather than, say, three moves away.
 
 From [Wikipedia](https://en.wikipedia.org/wiki/Minimax) again:
 >An alternative is using a rule that if the result of a move is an immediate win for A it is assigned positive infinity and, if it is an immediate win for B, negative infinity. The value to A of any other move is the minimum of the values resulting from each of B's possible replies. For this reason, A is called the maximizing player and B is called the minimizing player, hence the name minimax algorithm.
@@ -102,3 +102,5 @@ In the next step, 'value' is the zeroth element of the outcome of a (recursive) 
 At this point, the terminal value (an array with a score and the board as its two list items) is assigned to 'value' and then depending on whether it's player or !player and the score of 'value' in comparison with nextVal (initialised as null but assigned the score of 'value' if player is truthy and 'value' is more than 'nextVal', or if player is falsy and 'value' is less than nextVal).
 
 Then a new board is created and the current position is made available again. After every available move has been looped over and evaluated, the most optimal are returned in an array `[nextVal, nextBoard]`.
+
+I found this [MIT lecture](https://www.youtube.com/watch?v=STjW3eH0Cik) on the subject very interesting.
