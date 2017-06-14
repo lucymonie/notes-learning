@@ -1,18 +1,11 @@
-## What's the difference between an inner join and an outer join
+# What's the difference between an inner join and an outer join?
 
-I was asked this in an interview recently and I bombed, so I'm going to make sure I understand this so I can give a better answer next time I get asked this question.
+I was asked this in an interview recently and I bombed, so I'm going to make sure I understand this so I can give a better answer next time.
 
-### TL;DR
-- Inner joins make a new table with the values of the joined tables where they have corresponding values.
-- Outer joins can be used to get data for a new table, regardless of overlap.
+## What is a join?
+[From wikipedia](https://en.wikipedia.org/wiki/Join_(SQL)): the `JOIN` clause used in SQL combines columns from one or more tables in a relational database. It creates a set that can be saved as a table or used as it is. A `JOIN` is a way to combine columns from one or more tables using values common to each. Regular SQL has five types: `INNER`, `LEFT OUTER`, `RIGHT OUTER`, `FULL OUTER` and `CROSS`.
 
-![Complete Join Diagram](../images/vens.png)
-
-
-### What is a join?
-[From Wikipedia](https://en.wikipedia.org/wiki/Join_(SQL)):The `JOIN` clause used in SQL combines columns from one or more tables in a relational database. It creates a set that can be saved as a table or used as it is. A `JOIN` is a means for combining columns from one or more tables by using values common to each. Regular SQL has five types: `INNER`, `LEFT OUTER`, `RIGHT OUTER`, `FULL OUTER` and `CROSS`.
-
-### Example scenario
+## Example scenario
 Let's say you have a (very tiny) database of films. You want users to be able to get a list of all films in your database by director. You do this by selecting data from two tables named 'directors' and 'films'. The films table has a `director_id` column (a foreign key) that relates to the primary key (`director_id`) of the directors table.
 
 Table: directors
@@ -37,14 +30,14 @@ Table: films
 To join the table 'directors' to the table 'films':  
 - SELECT clause: specify the columns in both tables from which you want to select data (SQL allows you to use * to select all columns)
 - FROM clause: specify the main table  
-- [INNER | FULL OUTER | OUTER LEFT | OUTER RIGHT] JOIN clause: specify the table that the main table joins
+- INNER | FULL OUTER | LEFT [OUTER] | RIGHT [OUTER] JOIN clause: specify the table that the main table joins
 - ON keyword used to connect the tables (ie primary key and foreign key)
-- WHERE any condition for joining (eg some value IS null)
+- WHERE keyword establishes any condition for joining (eg some value IS null)
 
-#### Inner join
-You use an inner join to connect table data only where there is a corresponding key or other joining characteristic.
+### Inner join
+You use an inner join when you want to select table data on a corresponding value in the two tables.
 
-The INNER JOIN clause returns rows from the directors table that have corresponding rows in the films table (ie that have the director_id as a foreign key).
+The INNER JOIN clause can be used to return rows from the directors table that have corresponding rows in the films table (ie that have the director_id as a foreign key).
 
 ``` sql
 SELECT * FROM directors
@@ -60,8 +53,8 @@ Result:
 | dir0003        | Ang            | Lee            |
 
 
-#### Left join
-The LEFT JOIN clause returns the rows in the directors table that may or may not have corresponding rows in the films table.
+### Left join
+The LEFT JOIN (or left outer join) clause returns the rows in the directors table that may or may not have corresponding rows in the films table. It returns all rows from the directors table, inserting 'null' where no corresponding data is available from the films table.
 
 ``` sql
 SELECT * FROM directors  
@@ -78,8 +71,8 @@ Result:
 | dir0004        | Steve          | Martin         | (null)         | (null)                   | (null)      |
 
 
-#### Right join
-A RIGHT JOIN (or right outer join) resembles a left join, except with the treatment of the tables reversed. Every row from the films table will appear in the joined table at least once. If there isn't a matching row from the directors table, null will appear in columns from directors for those rows that have no match in films.
+### Right join
+A RIGHT JOIN (or right outer join) resembles a left join, except that the treatment of the tables is reversed. Every row from the films table will appear in the joined table at least once. If there isn't a matching row from the directors table, null will appear in columns from the directors table.
 
 ``` sql
 SELECT * FROM directors  
@@ -97,7 +90,7 @@ Result:
 | (null)         | (null)         | (null)         | film0005       | Groundhog Day            | 101         |
 
 
-#### Full outer join
+### Full outer join
 Full outer join creates a new table with all records from the two tables, with matching records from both sides where available. If there is no match, the missing side will contain null.
 
 ``` sql
@@ -117,11 +110,10 @@ Result:
 | (null)         | (null)         | (null)         | film0005       | Groundhog Day            | 101         |
 
 
-#### Cross join
-This is the third rail of joins - beware! It gets you a [cartesian product](https://en.wikipedia.org/wiki/Cartesian_product) of the two tables you've selected, which means every row connected without fear or favour to every row in the other table at least once. So it gets big and unweildy quickly. There's an interesting [Stackoverflow post](https://stackoverflow.com/questions/219716/what-are-the-uses-for-cross-join) about it.
+### Cross join
+This is the third rail of joins - beware! It gets you a [cartesian product](https://en.wikipedia.org/wiki/Cartesian_product) of the two tables you've selected, which means every row from one table is combined with every row in the other table at least once. So it gets big and unweildy quickly. There's an [Stackoverflow post](https://stackoverflow.com/questions/219716/what-are-the-uses-for-cross-join) that discusses when you might use these - the broadest seemed to be that you would start with every possible combination and use conditions to narrow the data down to what you wanted.
 
-#### Other types of joins
-
+### Other types of joins
 To return all films with no corresponding director:
 
 ``` sql
@@ -152,6 +144,12 @@ Result:
 | :------------- | :------------- | :------------- | :------------- | :----------------------  | :---------- |
 | dir0004        | Steve          | Martin         | (null)         | (null)                   | (null)      |
 
+
+## Summary
+- Inner joins make a new table with the values of the joined tables where they have corresponding values.
+- Outer joins can be used to get data for a new table, regardless of overlap.
+
+<img src="../images/vens.png" alt="Complete Join Diagram" style="width:250px;" />  
 
 ### Table joining resources:  
 - [A Visual Explanation of SQL Joins](https://blog.codinghorror.com/a-visual-explanation-of-sql-joins/)
