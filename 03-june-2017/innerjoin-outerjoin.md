@@ -2,6 +2,12 @@
 
 I was asked this in an interview recently and I bombed, so I'm going to make sure I understand this so I can give a better answer next time.
 
+### The short answer
+- Inner joins make a new table with the values of the joined tables where they have corresponding values.
+- Outer joins can be used to get data for a new table, regardless of overlap.
+
+However, if you'd like more details, read on.
+
 ## What is a join?
 [From wikipedia](https://en.wikipedia.org/wiki/Join_(SQL)): the `JOIN` clause used in SQL combines columns from one or more tables in a relational database. It creates a set that can be saved as a table or used as it is. A `JOIN` is a way to combine columns from one or more tables using values common to each. Regular SQL has five types: `INNER`, `LEFT OUTER`, `RIGHT OUTER`, `FULL OUTER` and `CROSS`.
 
@@ -145,10 +151,7 @@ Result:
 | dir0004        | Steve          | Martin         | (null)         | (null)                   | (null)      |
 
 
-## Summary
-- Inner joins make a new table with the values of the joined tables where they have corresponding values.
-- Outer joins can be used to get data for a new table, regardless of overlap.
-
+### Some venn diagrams showing how joins work
 <img src="../images/vens.png" alt="Complete Join Diagram" style="width:250px;" />  
 
 ### Table joining resources:  
