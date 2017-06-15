@@ -1,6 +1,5 @@
 ## Learning more about agile
 
-Agile:
 - the aim is to build working software that meets customer needs
 - this is done by trusting individuals and teams to get it done
 - teams talk about what they're working on and what's blocking them
@@ -13,48 +12,9 @@ Agile:
 **Customer collaboration** over contract negotiation  
 **Responding to change** over following a plan  
 
-Not that the things on the right are unimportant, but the things on the left take priority  
+The things on the right are important, but the things on the left take priority  
 
-### Principles behind the Agile Manifesto
+### Agile 2.0
+Ultra-light versions of Agile, include Lean and Kanban. Lean originated from the ideals of the Toyota Production System (zero waste, total quality and more customer value). These ideas were imported and applied to software development.
 
-Our highest priority is to satisfy the customer  
-through early and continuous delivery  
-of valuable software.  
-
-Welcome changing requirements, even late in  
-development. Agile processes harness change for  
-the customer's competitive advantage.  
-
-Deliver working software frequently, from a  
-couple of weeks to a couple of months, with a  
-preference to the shorter timescale.  
-
-Business people and developers must work  
-together daily throughout the project.  
-
-Build projects around motivated individuals.  
-Give them the environment and support they need,  
-and trust them to get the job done.  
-
-The most efficient and effective method of  
-conveying information to and within a development  
-team is face-to-face conversation.  
-
-Working software is the primary measure of progress.  
-
-Agile processes promote sustainable development.  
-The sponsors, developers, and users should be able  
-to maintain a constant pace indefinitely.  
-
-Continuous attention to technical excellence  
-and good design enhances agility.  
-
-Simplicity--the art of maximizing the amount  
-of work not done--is essential.  
-
-The best architectures, requirements, and designs  
-emerge from self-organizing teams.  
-
-At regular intervals, the team reflects on how  
-to become more effective, then tunes and adjusts  
-its behavior accordingly.  
+Software projects that mnimise waste, aim for quality, look at the big picture and deliver value to customers are essentially Agile, but with less heft than Agile 1.0. Kanban takes ideas from Agile and Lean and combines them into an alternative lightweight Agile method. 
