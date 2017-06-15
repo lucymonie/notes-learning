@@ -3,8 +3,8 @@
 I was asked this in an interview recently and I bombed, so I'm going to make sure I understand this so I can give a better answer next time.
 
 ### The short answer
-- Inner joins make a new table with the values of the joined tables where they have corresponding values.
-- Outer joins can be used to get data for a new table, regardless of overlap.
+- Inner joins make a new table, including rows only where there are corresponding values between the rows in each table.
+- Outer joins connect tables and include rows irrespective of corresponding values (inserting 'null' in columns from the other table for which there is no data).
 
 However, if you'd like more details, read on.
 
