@@ -52,3 +52,21 @@ console.log(fs[2]()); // 3
 ```
 
 The reason that the function logs '3' to the console in each instance is that the value of 'i' that is preserved in the lexical environment in which the function was created (but crucially, not run) is actually 3. This is because the for loop keeps on incrementing till it is no longer less than 3, so the value of 'i' when buildFunction returns the array is '3'. So when the functions that have been pushed into the array are finally invoked, the free variable (up the scope chain in the memory of the lexical environment) that they refer to is `i = 3`.
+
+If you did want to bind the value of i for each increment, so you get
+```
+console.log(fs[0]()); // 0
+console.log(fs[1]()); // 1
+console.log(fs[2]()); // 2
+```
+You could use `let` to bind the variable 'i' to the body of the for loop.
+
+```
+for (let i = 0; i < 3; i++) {
+  arr.push(function() {
+      console.log(i);
+    });
+}
+```
+
+In addition, the `let` keyword re-binds it to each iteration, ensuring it is re-assigned the value from the previous loop iteration.
