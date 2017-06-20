@@ -1,6 +1,5 @@
-## Notes from *You Don't Know JS* by Kyle Simpson
+## Notes from *You Don't Know JS: Scope & Closures* by Kyle Simpson
 
-[Book 2: Scope & Closures](https://github.com/getify/You-Dont-Know-JS/blob/master/scope%20&%20closures/README.md#you-dont-know-js-scope--closures)
 [Chapter 2: Lexical Scope](https://github.com/getify/You-Dont-Know-JS/blob/master/scope%20%26%20closures/ch2.md)
 There are two different types of scope used in programming languages, lexical scope and dynamic scope. JS uses lexical, which is vastly more common.  
 

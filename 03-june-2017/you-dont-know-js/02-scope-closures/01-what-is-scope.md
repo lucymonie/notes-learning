@@ -1,6 +1,5 @@
-## Notes from *You Don't Know JS* by Kyle Simpson
+## Notes from *You Don't Know JS: Scope & Closures* by Kyle Simpson
 
-[Book 2: Scope & Closures](https://github.com/getify/You-Dont-Know-JS/blob/master/scope%20&%20closures/README.md#you-dont-know-js-scope--closures)
 [Chapter 1: What is Scope?](https://github.com/getify/You-Dont-Know-JS/blob/master/scope%20%26%20closures/ch1.md)
 Scope is a set of rules governing the storage of variables in some location, and finding those variables again at another time.  
 
