@@ -47,7 +47,7 @@ function foo (a) {
 foo(2); // 2
 ```
 
-**Functions before variables**
+**Functions before variables**  
 Though both function declations and variables are hoisted, it's worth noting that function declarations are hoisted first.
 ```
 foo(); // 1
@@ -74,6 +74,6 @@ foo = function() {
 	console.log( 2 );
 };
 ```
-So the variable 'foo' was ignored by the engine at runtime, and the call to foo was treated as a RHS reference to the function declaration of that name.
+The variable 'foo' was ignored by the engine at runtime, and the call to foo was treated as a RHS reference to the function declaration of that name.
 
-Ad duplicate function declaration will override a previous function declaration, so it's best to be careful about duplicate declarations in the same scope.
+A duplicate function declaration will override a previous function declaration, so it's best to be careful about duplicate declarations in the same scope.

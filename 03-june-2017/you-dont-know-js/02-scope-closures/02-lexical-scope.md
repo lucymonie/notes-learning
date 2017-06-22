@@ -30,10 +30,8 @@ Since b is not defined in the scope of bar, the JS engine would look for it in t
 There's a pattern called shadowing, where the same identifier name can be specified at multiple layers of nested scope (the inner identifier 'shadows' the outer identifier). References to `window` are the only way to override shadowed identifiers.
 
 There are two ways to get around lexical scope, but neither is recommended or considered good practice. Both can be used at runtime to mess with the lexical scope
-1. eval()
-`eval()` takes a string with declarations in it and parses it as code
+1. `eval()` - takes a string with declarations in it and parses it as code
 
-2. with
-`with` takes an object and adds its properties as scoped identifiers
+2. `with` - takes an object and adds its properties as scoped identifiers
 
 Strict mode makes it impossible to use `with` at all, and limits the use of `eval()` to its core functionality.
