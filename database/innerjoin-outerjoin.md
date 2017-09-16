@@ -4,7 +4,7 @@ I was asked this in an interview recently and I bombed, so I'm going to make sur
 
 ### The short answer
 - Inner joins make a new table, including rows only where there are corresponding values between the rows in each table.
-- Outer joins connect tables and include rows irrespective of corresponding values (inserting 'null' in columns from the other table for which there is no data).
+- Outer joins also make a new table, but they include rows irrespective of corresponding values (inserting 'null' in columns from the other table for which there is no data).
 
 However, if you'd like more details, read on.
 
@@ -152,7 +152,7 @@ Result:
 
 
 ### Some venn diagrams showing how joins work
-<img src="../images/vens.png" alt="Complete Join Diagram" style="width:250px;" />  
+<img src="./images/vens.png" alt="Complete Join Diagram" style="width:250px;" />  
 
 ### Table joining resources:  
 - [A Visual Explanation of SQL Joins](https://blog.codinghorror.com/a-visual-explanation-of-sql-joins/)

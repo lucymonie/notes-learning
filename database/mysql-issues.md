@@ -1,8 +1,6 @@
 ## Issues with MySQL
 
-One of the things that I struggle with as a junior developer is my dependency on others. Like most people I enjoy feeling competent, and I find it hard to be turning to the person next to me and asking for help on a frequent basis, especially when I know they're likely in the middle of something fairly complicated. However, I also know that it's not cool to waste my employer's time when I'm truly stuck, so I ask.
-
-This week I was joined a team on my first wordpress project, which included a MySQL database. I installed MySQL when I did my LAMP installation, so I figured it should be straightforward.
+This week I joined a team on my first wordpress project, which included a MySQL database. I installed MySQL when I did my LAMP installation, so I figured it should be straightforward.
 
 I turned to Digital Ocean, which (of course) had some nice simple instructions for setting up a database, but I had some trouble. First, it turned out that I had no password. So I dutifully googled 'reset password mysql database', and I found some good instructions for that [here](https://help.ubuntu.com/community/MysqlPasswordReset) (suitable for Ubuntu 16.04).
 
