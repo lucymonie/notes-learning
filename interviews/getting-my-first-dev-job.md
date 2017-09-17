@@ -10,7 +10,7 @@ Doing a bootcamp is great but there's a lot that won't get covered or that you m
 - Prototypal inheritance
 - How `this` binding works
 
-If you can do a little more:
+Stretch goals
 - Build a portfolio piece using a frontend framework and build tools.
 - Try to treat interviews as a chance to find out if you like the company
 - Learn Vim
@@ -28,7 +28,7 @@ In a way, this was quite useful as it forced me to think very carefully before a
 The result was that I applied for only a few positions at any given time, and I learned a lot from them. Worth noting: I applied to a couple of other companies as well as those detailed below but didn't mention them as there were limited learnings (Easle, Bulb) or I didn't proceed with the process (Monzo, Thoughtworks).
 
 **The Guardian - Digital Development Fellowship**  
-I had a phone screen for this role. I didn't make it any further than that. The feedback I got was that most of my answers weemed to be based on things I had been taught and not based on my own experience. Since the role was a beginner one, I was puzzled by this as I had thought they were looking for people with limited-to-zero experience. 
+I had a phone screen for this role. I didn't make it any further than that. The feedback I got was that most of my answers seemed to be based on things I had been taught and not based on my own experience. Since the role was a beginner one, I was puzzled by this as I had thought they were looking for people with limited-to-zero experience. 
 
 Key learning: When the company is well known and desirable, they get so many people applying that they don't have to settle for someone with zero experience. A beginner role may be taken by someone with a CS degree or at least a year of professional experience. Apply anyway as you will learn from it, but adjust your expectations.
 
