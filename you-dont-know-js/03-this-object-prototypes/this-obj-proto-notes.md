@@ -121,3 +121,20 @@ baz(); // 2
 ```
 
 You can even try to overwrite this by calling it as `bar.call(window);` thus attempting to bind `this` to the global object, but the hard binding pattern in bar() has hard-bound `this` to `obj` when it's called, and can't be overwritten. 
+
+Hard binding is such a common pattern that there is a bind() method built into Javascript. 
+
+function foo (something) {
+ console.log( this.a, something);
+ return this.a + something;
+}
+
+var obj = {
+ a: 2
+}
+
+var bar = foo.bind(obj);
+
+var b = bar(3); // 2 3
+console.log(b); // 5
+
