@@ -59,7 +59,7 @@ var obj1 = {
 obj1.obj2.foo() // 42
 ```
 
-- 3. Lost Implicit
+**Lost Implicit**
 This is when a function reference is passed in with an implicit location (say you passed in an object property (method) that points to a function. Instead of pointing to the object, `this` then simply points to the function as that's what the object property name is pointing to. So the intended (implicit) location of `this` gets lost. Another way this can happen is that if a variable is created that is a reference to an object property, and this is then called from the global scope, `this` gets lost and is bound to the global object (as long as you're not using strict mode).
 ``` 
 function foo () {
@@ -78,7 +78,7 @@ var a = 'Oh noes!';
 bar(); // Oh noes!
 ```
 
-- 4. Explicit
+- 3. Explicit
 Instead of leaving the binding to its default or implicit state, we can control the binding by explicitly passing an object to which `this` will be bound when a function is invoked.
 
 So the code above could be handled as follows
@@ -123,7 +123,7 @@ baz(); // 2
 You can even try to overwrite this by calling it as `bar.call(window);` thus attempting to bind `this` to the global object, but the hard binding pattern in bar() has hard-bound `this` to `obj` when it's called, and can't be overwritten. 
 
 Hard binding is such a common pattern that there is a bind() method built into Javascript. 
-
+```
 function foo (something) {
  console.log( this.a, something);
  return this.a + something;
@@ -137,4 +137,18 @@ var bar = foo.bind(obj);
 
 var b = bar(3); // 2 3
 console.log(b); // 5
+```
+It's worth noting that if you use `.filter()`, `.map()` or `.forEach()` you can pass in a context object as the second argument (after the callback) and this will be bound to the context object if it is passed in. If you don't pass in a context object, this will 'undefined'.
+
+- 4. `new` binding
+The last type of binding uses the `new` operator. When you call a function with the operator `new` in front of it, it sets off a series of actions. A new object is created, and `this` is bound to that object. Any properties or methods attached to the function or its prototype are transferred to the object, which is returned by the function (when invoked with the `new` operator).
+
+Worth noting: if you return something explicitly from a constructor function, this overrides the process by which `this` is bound. The function will return what you have specified at write time rather than the object it would inherently create via the `new` operator.
+
+There is an order of precedence in the types of binding:
+1. `new` binding
+2. Hard or explicit binding
+3. Implicit binding
+4. Default binding
+
 
